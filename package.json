@@ -1,13 +1,28 @@
 {
-  "name": "code-execution-engine",
+  "name": "code-execution-engine-test",
   "version": "0.0.1",
   "description": "Code Execution Engine for NodeJS",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc -p ."
+  },
   "keywords": [
     "Code",
     "Execution",
     "Engine"
   ],
   "author": "Simon Köck",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonkoeck/code-execution-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simonkoeck/code-execution-engine/issues"
+  },
+  "homepage": "https://github.com/simonkoeck/code-execution-engine#readme"
 }

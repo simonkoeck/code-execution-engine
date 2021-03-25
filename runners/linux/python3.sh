@@ -1,0 +1,1 @@
+timeout -s SIGKILL 10 python3 /tmp/$1
