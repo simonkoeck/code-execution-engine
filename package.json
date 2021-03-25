@@ -1,0 +1,13 @@
+{
+  "name": "code-execution-engine",
+  "version": "0.0.1",
+  "description": "Code Execution Engine for NodeJS",
+  "main": "index.js",
+  "keywords": [
+    "Code",
+    "Execution",
+    "Engine"
+  ],
+  "author": "Simon Köck",
+  "license": "ISC"
+}
