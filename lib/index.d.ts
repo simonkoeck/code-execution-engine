@@ -1,2 +1,6 @@
-export declare function add(a: number, b: number): number;
+import executer from "./executor";
+export declare const languages: Readonly<{
+    PYTHON3: number;
+}>;
+export declare const execute: typeof executer;
 //# sourceMappingURL=index.d.ts.map
