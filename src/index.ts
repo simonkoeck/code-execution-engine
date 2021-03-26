@@ -1,5 +1,5 @@
 import executer from "./executor";
-import LANGUAGES from "./languages";
+import l from "./languages";
 
-export const languages = LANGUAGES;
+export const languages = l;
 export const execute = executer;

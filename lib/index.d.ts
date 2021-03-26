@@ -1,6 +1,5 @@
 import executer from "./executor";
-export declare const languages: Readonly<{
-    PYTHON3: number;
-}>;
+import l from "./languages";
+export declare const languages: typeof l;
 export declare const execute: typeof executer;
 //# sourceMappingURL=index.d.ts.map

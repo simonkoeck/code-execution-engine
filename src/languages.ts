@@ -1,3 +1,5 @@
-const LANGUAGES = Object.freeze({ PYTHON3: 1 });
+enum Language {
+  PYTHON3 = "python3",
+}
 
-export default LANGUAGES;
+export default Language;

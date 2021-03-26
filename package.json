@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/simonkoeck/code-execution-engine/issues"
   },
-  "homepage": "https://github.com/simonkoeck/code-execution-engine#readme"
+  "homepage": "https://github.com/simonkoeck/code-execution-engine#readme",
+  "dependencies": {
+    "unique-filename": "^1.1.1"
+  }
 }
