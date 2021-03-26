@@ -7,7 +7,7 @@ const uniqueFilename = require("unique-filename");
 
 interface ISecurity {
   enabled?: boolean;
-  uselxc?: boolean;
+  useLXC?: boolean;
   timeout?: number;
 }
 
@@ -19,12 +19,14 @@ interface IOptions {
  *
  * @param input The code that should be executed
  * @param language Language of the input parameter
+ * @param args Array of arguments to run the code
  * @param options Options Parameter
  * @returns Result of the code
  */
 export default async function execute(
   input: string,
   language: Language,
+  args?: [string],
   options?: IOptions
 ): Promise<string> {
   // Check Platform

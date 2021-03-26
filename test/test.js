@@ -1,13 +1,10 @@
 var cee = require("../lib/index");
 (async () => {
   var r = await cee.execute(
-    `#include <stdio.h>
-int main() {
-   printf("Hello, test123!");
-   return 0;
-}
+    `
+    echo 123
 `,
-    cee.languages.C,
+    cee.languages.BASH,
     {
       security: {
         enabled: false,

@@ -73,6 +73,10 @@ const options = {
 cee.execute("print('Hi!')", cee.languages.PYTHON3, options);
 ```
 
+#### LXC
+
+LXC are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC are only available on Linux-Systems.
+
 <a name="contributing"/>
 
 ## Contributing
