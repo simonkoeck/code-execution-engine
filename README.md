@@ -1,4 +1,4 @@
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/simonkoeck/code-execution-engine/graphs/commit-activity) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/simonkoeck) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/simonkoeck/code-execution-engine/blob/master/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/simonkoeck/code-execution-engine/graphs/commit-activity) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/simonkoeck) [![GitHub license](https://img.shields.io/github/license/simonkoeck/code-execution-engine)](https://github.com/simonkoeck/code-execution-engine/blob/master/LICENSE) [![GitHub contributors](https://img.shields.io/github/contributors/simonkoeck/code-execution-engine)](https://GitHub.com/simonkoeck/code-execution-engine)
 
 # Code-Execution-Engine
 
@@ -9,6 +9,10 @@ A simple and secure Code-Execution-Engine in Javascript.
 [Installation](#installation)
 
 [Usage](#usage)
+
+[Supported Languages](#supported-languages)
+
+[Security](#security)
 
 [Contributing](#contributing)
 
@@ -39,6 +43,34 @@ cee
   .catch((error) => {
     console.error(error);
   });
+```
+
+<a name="supported-languages"/>
+
+## Supported Languages
+
+- Python3
+- Javascript
+- Ruby
+
+<a name="security"/>
+
+## Security
+
+IMPORTANT: There are no security modules available for windows!
+
+```javascript
+const cee = require("code-execution-engine");
+
+const options = {
+  security: {
+    enabled: true, // defaults to false
+    uselxc: true, // enhanced security, but you need to install it first
+    timeout: 10, // 10 seconds timeout
+  },
+};
+
+cee.execute("print('Hi!')", cee.languages.PYTHON3, options);
 ```
 
 <a name="contributing"/>
