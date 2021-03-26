@@ -1,6 +1,8 @@
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/simonkoeck/code-execution-engine/graphs/commit-activity) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/simonkoeck) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/simonkoeck/code-execution-engine/blob/master/LICENSE)
+
 # Code-Execution-Engine
 
-A simple and secure Code-Execution-Engine in Javascript
+A simple and secure Code-Execution-Engine in Javascript.
 
 ## Table of Contents
 
