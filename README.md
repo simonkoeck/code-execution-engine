@@ -4,7 +4,7 @@
 
 A simple and secure Code-Execution-Engine in Javascript.
 
-❗This package is not secure by default. Visit [Security](#security) for production projects❗
+❗This package is not secure by default. Visit [Security](#security) for production projects.❗
 
 ## Table of Contents
 
@@ -15,6 +15,8 @@ A simple and secure Code-Execution-Engine in Javascript.
 [Supported Languages](#supported-languages)
 
 [Security](#security)
+
+[LXC](#lxc)
 
 [Contributing](#contributing)
 
@@ -66,8 +68,7 @@ const cee = require("code-execution-engine");
 
 const options = {
   security: {
-    enabled: true, // defaults to false
-    uselxc: true, // enhanced security, but you need to install it first
+    useLXC: true, // defaults to false
     timeout: 10, // 10 seconds timeout
   },
 };
@@ -75,9 +76,31 @@ const options = {
 cee.execute("print('Hi!')", cee.languages.PYTHON3, options);
 ```
 
-#### LXC
+In order to use useLXC, follow the instructions below to setup LXC.
+
+<a name="lxc"/>
+
+## LXC
 
 LXC are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC are only available on Linux-Systems.
+
+### Installation
+
+```sh
+$ sudo apt-get install lxc
+```
+
+Create the Linux-Container
+
+```sh
+$ lxc-create -t download -n cee
+```
+
+Start the created container
+
+```sh
+$ lxc-start -n cee -d
+```
 
 <a name="contributing"/>
 
