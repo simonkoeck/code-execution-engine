@@ -33,7 +33,7 @@ export default async function execute(
   // Execute code
   return new Promise<string>((resolve, reject) => {
     exec(
-      `sh runners/${os}/${language}.sh ${filepath}`,
+      `sh ${__dirname}/../runners/${os}/${language}.sh ${filepath}`,
       (err, stdout, stderr) => {
         if (stderr) return reject(stderr);
         resolve(stdout);
