@@ -4,6 +4,8 @@
 
 A simple and secure Code-Execution-Engine in Javascript.
 
+❗This package is not secure by default. Visit [Security](#security) for production projects❗
+
 ## Table of Contents
 
 [Installation](#installation)
