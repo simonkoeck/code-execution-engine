@@ -4,9 +4,12 @@ A simple and secure Code-Execution-Engine in Javascript
 
 ## Table of Contents
 
-[Installation](#installation)  
+[Installation](#installation)
+
 [Usage](#usage)
+
 [Contributing](#contributing)
+
 [License](#license)
 
 <a name="installation"/>
