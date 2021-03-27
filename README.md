@@ -63,6 +63,8 @@ cee
 
 IMPORTANT: There are no security modules available for windows!
 
+**The useLXC Option is currently under maintenance! Don't execute untrusted code with this package.**
+
 ```javascript
 const cee = require("code-execution-engine");
 
