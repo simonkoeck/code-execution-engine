@@ -54,6 +54,10 @@ export default async function execute(
         unlinkSync(filepath);
 
         if (stderr) return reject(stderr);
+
+        // Remove newline from stdout
+        if (stdout.endsWith("\n")) stdout = stdout.slice(0, -1);
+
         resolve(stdout);
       }
     );
