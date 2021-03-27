@@ -12,11 +12,17 @@ class LXC {
     // Check OS
     const os = platform();
     if (os !== "linux") {
-      throw new Error("Your OS don't support LXCs.");
+      throw {
+        name: "UnsupportedOSError",
+        message: "LXCs only work on linux machines",
+      };
     }
     // Check if LXC is installed
     if (!commandExists("lxc-attach")) {
-      throw new Error("LXC is not installed on your system.");
+      throw {
+        name: "LXCNotInstalled",
+        message: "LXC is not installed on your machine",
+      };
     }
     this._OS = os;
     this.LXC_ROOT_FS = "";
@@ -25,16 +31,15 @@ class LXC {
       `bash ${__dirname}/../runners/lxc/lxc-check-container.bash ${container}`,
       (err, stdout, stderr) => {
         if (err || stderr)
-          throw new Error(
-            `Container with the name "${container}" was not found on your system.`
-          );
+          throw {
+            name: "LXCContainerNotFound",
+            message: "Your specified LXC-Container couldn't be found.",
+          };
       }
     );
   }
 
   execute(input: string, language: Language) {
-    if (this._OS !== "linux") throw new Error("Your OS doesn't support LXC.");
-
     const id = new Date().getTime() + "_" + Math.floor(Math.random() * 10000);
 
     try {

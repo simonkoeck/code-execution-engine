@@ -1,7 +1,7 @@
 var cee = require("../lib/index");
 
-var executor = new cee.LXC("test");
-executor.execute("fdasfasdf", cee.languages.BASH);
+// var executor = new cee.LXC("test");
+// executor.execute("fdasfasdf", cee.languages.BASH);
 
 describe("Testing Basic Languages", () => {
   test("Bash", () => {
