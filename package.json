@@ -1,5 +1,5 @@
 {
-  "name": "code-execution-engine-test",
+  "name": "code-execution-engine",
   "version": "0.2.1",
   "description": "Code Execution Engine for NodeJS",
   "main": "lib/index.js",

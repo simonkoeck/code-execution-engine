@@ -7,7 +7,7 @@ var cee = require("../lib/index");
     cee.languages.BASH,
     {
       security: {
-        enabled: false,
+        useLXC,
       },
     }
   );
