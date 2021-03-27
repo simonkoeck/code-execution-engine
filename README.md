@@ -53,9 +53,9 @@ cee
 
 ## Supported Languages
 
-- Python3
-- Javascript
-- Ruby
+- **Python3** (Windows / Linux)
+- **Bash** (Linux)
+- **C** (Linux)
 
 <a name="security"/>
 
