@@ -25,7 +25,7 @@ class LXC {
       };
     }
     this._OS = os;
-    this.LXC_ROOT_FS = `/home/simon/.local/share/lxc/${container}/rootfs`;
+    this.LXC_ROOT_FS = `${process.env.HOME}/.local/share/lxc/${container}/rootfs`;
     // Check if Container exists
     exec(
       `bash ${__dirname}/../runners/lxc/lxc-check-container.bash ${container}`,
