@@ -63,19 +63,22 @@ cee
 
 IMPORTANT: There are no security modules available for windows!
 
-**The useLXC Option is currently under maintenance! Don't execute untrusted code with this package.**
-
 ```javascript
 const cee = require("code-execution-engine");
 
-const options = {
-  security: {
-    useLXC: true, // defaults to false
-    timeout: 10, // 10 seconds timeout
-  },
-};
+const executor = cee.LXC("[NAME OF YOUR LXC-CONTAINER]");
 
-cee.execute("print('Hi!')", cee.languages.PYTHON3, options);
+// Run this line after the installation of the container
+executor.init();
+
+executor
+  .execute("echo 'Im in a secure environment!'", cee.languages.BASH)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
 In order to use useLXC, follow the instructions below to setup LXC.
@@ -86,23 +89,9 @@ In order to use useLXC, follow the instructions below to setup LXC.
 
 LXC are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC are only available on Linux-Systems.
 
-### Installation
+In order to use this package with LXC, you need to install an unprivileged container.
 
-```sh
-$ sudo apt-get install lxc
-```
-
-Create the Linux-Container
-
-```sh
-$ lxc-create -t download -n cee
-```
-
-Start the created container
-
-```sh
-$ lxc-start -n cee -d
-```
+**Follow these instructions: [linuxcontainers.org](https://linuxcontainers.org/lxc/getting-started/#creating-unprivileged-containers-as-a-user)**
 
 <a name="contributing"/>
 
