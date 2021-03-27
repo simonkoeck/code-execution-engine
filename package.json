@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
+    "test": "node test/test.js",
     "build": "tsc -p ."
   },
   "keywords": [

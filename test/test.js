@@ -3,11 +3,11 @@ var cee = require("../lib/index");
   var r = await cee.execute(
     `
     echo 123
-`,
+    `,
     cee.languages.BASH,
     {
       security: {
-        useLXC,
+        useLXC: false,
       },
     }
   );
