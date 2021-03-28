@@ -6,6 +6,7 @@ enum Language {
   JAVASCRIPT = "js",
   RUBY = "ruby",
   CPP = "cpp",
+  JAVA = "java",
 }
 
 export default Language;

@@ -33,6 +33,23 @@ describe("Testing Basic Languages", () => {
         expect(response).toBe("123");
       });
   });
+  test("Java", () => {
+    return cee
+      .execute(
+        `public class HelloWorld 
+{
+ 
+       public static void main (String[] args)
+       {
+             System.out.println("123");
+       }
+}`,
+        cee.languages.JAVA
+      )
+      .then((response) => {
+        expect(response).toBe("123");
+      });
+  });
   // test("LXC", () => {
   //   var executor = new cee.LXC("cee");
   //   return executor.execute("whoami", cee.languages.BASH).then((response) => {

@@ -68,6 +68,7 @@ _language_: cee.Language – Pass the language the code is written in, for examp
 - **Bash** (Linux)
 - **C** (Linux)
 - **C++** (Linux)
+- **Java** (Linux)
 
 More supported languages coming soon.
 
