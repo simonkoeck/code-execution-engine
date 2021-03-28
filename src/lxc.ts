@@ -1,5 +1,4 @@
 import { exec } from "child_process";
-import commandExists from "command-exists";
 import { mkdirSync, writeFileSync, readFileSync, chmodSync } from "fs";
 import { platform } from "os";
 import Language from "./languages";
@@ -17,13 +16,7 @@ class LXC {
         message: "LXCs only work on linux machines",
       };
     }
-    // Check if LXC is installed
-    if (!commandExists("lxc-attach")) {
-      throw {
-        name: "LXCNotInstalled",
-        message: "LXC is not installed on your machine",
-      };
-    }
+
     this._OS = os;
     this.LXC_ROOT_FS = `${process.env.HOME}/.local/share/lxc/${container}/rootfs`;
     // Check if Container exists
