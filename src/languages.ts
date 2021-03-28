@@ -7,6 +7,7 @@ enum Language {
   RUBY = "ruby",
   CPP = "cpp",
   JAVA = "java",
+  GO = "go",
 }
 
 export default Language;

@@ -29,6 +29,7 @@ export default async function execute(
   if (language == Language.C) temppath += ".c";
   else if (language == Language.BATCH) temppath += ".bat";
   else if (language == Language.CPP) temppath += ".c";
+  else if (language == Language.GO) temppath += ".go";
   writeFileSync(temppath, input, { encoding: "utf-8" });
 
   // Command to execute runner
