@@ -2,7 +2,8 @@ enum Language {
   PYTHON3 = "python3",
   C = "gcc",
   BASH = "bash",
-  BATCH = "bat"
+  BATCH = "bat",
+  JAVASCRIPT = "js",
 }
 
 export default Language;

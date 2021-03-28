@@ -6,10 +6,6 @@ import path from "path";
 
 const uniqueFilename = require("unique-filename");
 
-interface IOptions {
-  timeout?: number;
-}
-
 /**
  *
  * @param input The code that should be executed
@@ -20,8 +16,7 @@ interface IOptions {
  */
 export default async function execute(
   input: string,
-  language: Language,
-  options?: IOptions
+  language: Language
 ): Promise<string> {
   // Check Platform
   const os = platform();

@@ -55,13 +55,14 @@ Returns the result (stdout) of the executed code. If stderr is not empty, an exc
 
 _input_: string – The code you want to execute.
 
-_language_: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`
+_language_: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
 
 <a name="supported-languages"/>
 
 ## Supported Languages
 
 - **Python3** (Windows / Linux)
+- **Javascript** (Windows / Linux)
 - **Batch** (Windows)
 - **Bash** (Linux)
 - **C** (Linux)
