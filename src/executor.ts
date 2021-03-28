@@ -2,7 +2,6 @@ import { platform, tmpdir } from "os";
 import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
 import { exec } from "child_process";
 import Language from "./languages";
-import { sync as commandExists } from "command-exists";
 import path from "path";
 
 const uniqueFilename = require("unique-filename");
@@ -30,14 +29,10 @@ export default async function execute(
     throw Error("Your OS is not supported yet.");
   }
 
-  // Check if Command Exists
-  if (!commandExists(language)) {
-    throw new Error("This language is not installed on the machine");
-  }
-
   // Write File to temp folder
   var temppath: string = uniqueFilename(tmpdir());
   if (language == Language.C) temppath += ".c";
+  else if (language == Language.BATCH) temppath += ".bat";
   writeFileSync(temppath, input, { encoding: "utf-8" });
 
   // Command to execute runner
