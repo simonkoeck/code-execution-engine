@@ -83,7 +83,7 @@ executor
   });
 ```
 
-In order to use useLXC, follow the instructions below to setup LXC.
+In order to use LXC, follow the instructions below to setup LXC.
 
 <a name="lxc"/>
 

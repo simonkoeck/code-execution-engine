@@ -1,2 +1,4 @@
 tests/
 src/
+_config.yml
+.github/
