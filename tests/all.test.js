@@ -18,6 +18,21 @@ describe("Testing Basic Languages", () => {
       expect(response).toBe("123");
     });
   });
+  test("C++", () => {
+    return cee
+      .execute(
+        `#include "iostream"
+        int main(void) 
+        {
+            std::cout << "123";
+            return 0;
+        }`,
+        cee.languages.CPP
+      )
+      .then((response) => {
+        expect(response).toBe("123");
+      });
+  });
   // test("LXC", () => {
   //   var executor = new cee.LXC("cee");
   //   return executor.execute("whoami", cee.languages.BASH).then((response) => {

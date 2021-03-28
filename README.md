@@ -67,6 +67,7 @@ _language_: cee.Language – Pass the language the code is written in, for examp
 - **Batch** (Windows)
 - **Bash** (Linux)
 - **C** (Linux)
+- **C++** (Linux)
 
 More supported languages coming soon.
 

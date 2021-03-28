@@ -28,6 +28,7 @@ export default async function execute(
   var temppath: string = uniqueFilename(tmpdir());
   if (language == Language.C) temppath += ".c";
   else if (language == Language.BATCH) temppath += ".bat";
+  else if (language == Language.CPP) temppath += ".c";
   writeFileSync(temppath, input, { encoding: "utf-8" });
 
   // Command to execute runner
