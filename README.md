@@ -57,6 +57,8 @@ cee
 - **Bash** (Linux)
 - **C** (Linux)
 
+More supported languages coming soon.
+
 <a name="security"/>
 
 ## Security
@@ -66,7 +68,7 @@ IMPORTANT: There are no security modules available for windows!
 ```javascript
 const cee = require("code-execution-engine");
 
-const executor = cee.LXC("[NAME OF YOUR LXC-CONTAINER]");
+const executor = new cee.LXC("[NAME OF YOUR LXC-CONTAINER]");
 
 // Run this line after the installation of the container
 executor.init();
