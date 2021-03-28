@@ -1,2 +1,4 @@
 node_modules/
 lib/
+runners/lxc/i
+runners/lxc/lockfile
