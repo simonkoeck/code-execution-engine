@@ -2,7 +2,6 @@ import { platform, tmpdir } from "os";
 import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
 import { exec } from "child_process";
 import Language from "./languages";
-import { sync as commandExists } from "command-exists";
 import path from "path";
 
 const uniqueFilename = require("unique-filename");
