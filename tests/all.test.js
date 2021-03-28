@@ -13,6 +13,11 @@ describe("Testing Basic Languages", () => {
         expect(response).toBe("123");
       });
   });
+  test("Ruby", () => {
+    return cee.execute("puts 123", cee.languages.RUBY).then((response) => {
+      expect(response).toBe("123");
+    });
+  });
   // test("LXC", () => {
   //   var executor = new cee.LXC("cee");
   //   return executor.execute("whoami", cee.languages.BASH).then((response) => {

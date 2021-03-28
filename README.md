@@ -63,6 +63,7 @@ _language_: cee.Language – Pass the language the code is written in, for examp
 
 - **Python3** (Windows / Linux)
 - **Javascript** (Windows / Linux)
+- **Ruby** (Windows / Linux)
 - **Batch** (Windows)
 - **Bash** (Linux)
 - **C** (Linux)

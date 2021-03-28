@@ -4,6 +4,7 @@ enum Language {
   BASH = "bash",
   BATCH = "bat",
   JAVASCRIPT = "js",
+  RUBY = "ruby",
 }
 
 export default Language;
