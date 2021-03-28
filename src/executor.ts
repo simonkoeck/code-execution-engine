@@ -10,8 +10,6 @@ const uniqueFilename = require("unique-filename");
  *
  * @param input The code that should be executed
  * @param language Language of the input parameter
- * @param args Array of arguments to run the code
- * @param options Options Parameter
  * @returns Result of the code
  */
 export default async function execute(
@@ -53,7 +51,11 @@ export default async function execute(
       // Delete created file
       unlinkSync(temppath);
 
-      if (stderr) return reject(stderr);
+      if (stderr) {
+        // Remove newline from stderr
+        if (stderr.endsWith("\n")) stderr = stderr.slice(0, -1);
+        return reject(stderr);
+      }
 
       // Remove newline from stdout
       if (stdout.endsWith("\n")) stdout = stdout.slice(0, -1);
