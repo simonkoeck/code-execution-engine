@@ -1,2 +1,6 @@
 tests/
 src/
+_config.yml
+.github/
+runners/lxc/i
+runners/lxc/lockfile
