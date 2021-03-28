@@ -49,6 +49,14 @@ cee
   });
 ```
 
+### execute(_input_, _language_) → Promise&lt;String&gt;
+
+Returns the result (stdout) of the executed code. If stderr is not empty, an exception will be thrown with the content of stderr.
+
+_input_: string – The code you want to execute.
+
+_language_: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`
+
 <a name="supported-languages"/>
 
 ## Supported Languages
