@@ -3,6 +3,8 @@ import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
 import { exec } from "child_process";
 import Language from "./languages";
 import { sync as commandExists } from "command-exists";
+import path from "path";
+
 const uniqueFilename = require("unique-filename");
 
 interface IOptions {
@@ -34,25 +36,37 @@ export default async function execute(
   }
 
   // Write File to temp folder
-  var filepath: string = uniqueFilename(tmpdir());
-  if (language == Language.C) filepath += ".c";
-  writeFileSync(filepath, input, { encoding: "utf-8" });
+  var temppath: string = uniqueFilename(tmpdir());
+  if (language == Language.C) temppath += ".c";
+  writeFileSync(temppath, input, { encoding: "utf-8" });
+
+  // Command to execute runner
+  var command = os == "win32" ? "" : "sh";
+
+  // Filetype of runner
+  var filetype = os == "win32" ? "bat" : "sh";
+
+  // Path to runner file
+  var runnerpath = path.join(
+    __dirname,
+    "..",
+    "runners",
+    os,
+    `${language}.${filetype}`
+  );
 
   // Execute code
   return new Promise<string>((resolve, reject) => {
-    exec(
-      `sh ${__dirname}/../runners/${os}/${language}.sh ${filepath}`,
-      (err, stdout, stderr) => {
-        // Delete created file
-        unlinkSync(filepath);
+    exec(`${command} ${runnerpath} ${temppath}`, (err, stdout, stderr) => {
+      // Delete created file
+      unlinkSync(temppath);
 
-        if (stderr) return reject(stderr);
+      if (stderr) return reject(stderr);
 
-        // Remove newline from stdout
-        if (stdout.endsWith("\n")) stdout = stdout.slice(0, -1);
+      // Remove newline from stdout
+      if (stdout.endsWith("\n")) stdout = stdout.slice(0, -1);
 
-        resolve(stdout);
-      }
-    );
+      resolve(stdout);
+    });
   });
 }
