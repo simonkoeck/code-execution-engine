@@ -54,6 +54,7 @@ cee
 ## Supported Languages
 
 - **Python3** (Windows / Linux)
+- **Batch** (Windows)
 - **Bash** (Linux)
 - **C** (Linux)
 
