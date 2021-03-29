@@ -1,6 +1,6 @@
 {
   "name": "code-execution-engine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Code Execution Engine for NodeJS",
   "main": "lib/index.js",
   "types": "./lib/index.d.ts",
