@@ -2,7 +2,7 @@
 
 # Code-Execution-Engine
 
-A simple and secure Code-Execution-Engine in Javascript.
+A fast and secure Code-Execution-Engine in Javascript.
 
 ❗This package is not secure by default. Visit [Security](#security) for production projects.❗
 
@@ -97,7 +97,7 @@ executor
   });
 ```
 
-In order to use LXC, follow the instructions below to setup LXC.
+To use LXC, follow the instructions below to setup LXC.
 
 <a name="lxc"/>
 
@@ -105,7 +105,7 @@ In order to use LXC, follow the instructions below to setup LXC.
 
 LXC are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC are only available on Linux-Systems.
 
-In order to use this package with LXC, you need to install an unprivileged container.
+To use this package with LXC, you need to install an unprivileged container.
 
 **Follow these instructions: [linuxcontainers.org](https://linuxcontainers.org/lxc/getting-started/#creating-unprivileged-containers-as-a-user)**
 
