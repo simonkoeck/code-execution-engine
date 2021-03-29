@@ -1,2 +1,3 @@
 @echo off
-python2 %1
+cd %1
+python2 code.code

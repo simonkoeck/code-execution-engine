@@ -1,5 +1,6 @@
 #!/bin/sh
-timeout -s SIGKILL 10 g++ $1 -o $1.out
-chmod +x $1.out
-timeout -s SIGKILL 10 $1.out
-rm $1.out
+cd $1
+cp code.code code.c
+timeout -s SIGKILL 10 g++ code.c -o a.out
+chmod +x a.out
+timeout -s SIGKILL 10 xargs -a args.args -d '\n' ./a.out < stdin.stdin

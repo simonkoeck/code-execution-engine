@@ -1,4 +1,4 @@
 #!/bin/sh
-cp $1 /tmp/interim.java
-timeout -s SIGKILL 10 java /tmp/interim.java
-rm /tmp/interim.java
+cd $1
+cp code.code interim.java
+timeout -s SIGKILL 10 xargs -a args.args -d '\n' java interim.java < stdin.stdin

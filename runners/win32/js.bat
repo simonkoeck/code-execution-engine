@@ -1,2 +1,3 @@
 @echo off
-node %1
+cd %1
+node code.code

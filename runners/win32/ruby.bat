@@ -1,2 +1,3 @@
 @echo off
-ruby %1
+cd %1
+ruby code.code

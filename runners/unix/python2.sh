@@ -1,2 +1,3 @@
 #!/bin/sh
-timeout -s SIGKILL 10 python2 $1
+cd $1
+timeout -s SIGKILL 10 xargs -a args.args -d '\n' python2 code.code < stdin.stdin

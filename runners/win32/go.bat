@@ -1,2 +1,4 @@
 @echo off
-go run %1
+cd %1
+copy code.code code.go
+go run code.go

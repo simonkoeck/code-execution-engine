@@ -1,2 +1,3 @@
 #!/bin/sh
-timeout -s SIGKILL 10 ruby $1
+cd $1
+timeout -s SIGKILL 10 xargs -a args.args -d '\n' ruby code.code < stdin.stdin
