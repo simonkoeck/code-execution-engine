@@ -37,10 +37,11 @@ export default async function execute(
 
   const tempFolder: string = path.join(tmpdir(), id);
 
+
   try {
     mkdirSync(tempFolder);
     writeFileSync(`${tempFolder}/code.code`, input);
-    writeFileSync(`${tempFolder}/args.args`, args.join("\n"));
+    writeFileSync(`${tempFolder}/args.args`, env == Environment.WIN ? args.join(" "): args.join("\n"));
     writeFileSync(`${tempFolder}/stdin.stdin`, stdin);
   } catch (e) {
     throw e;
@@ -67,7 +68,10 @@ export default async function execute(
 
   // Execute code
   return new Promise<string>((resolve, reject) => {
-    exec(`${command} ${runnerpath} ${tempFolder}`, (err, stdout, stderr) => {
+    // if username has a space in it
+    var runcmd = env == Environment.WIN ? `${command} "${runnerpath}" ${tempFolder}` : `${command} ${runnerpath} ${tempFolder}`;
+    // run command
+    exec(runcmd, (err, stdout, stderr) => {
       // Delete created folder
       rmdirSync(tempFolder, { recursive: true });
 
