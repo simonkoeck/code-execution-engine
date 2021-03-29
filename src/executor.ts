@@ -1,3 +1,5 @@
+"use strict";
+
 import { platform, tmpdir } from "os";
 import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
 import { exec } from "child_process";

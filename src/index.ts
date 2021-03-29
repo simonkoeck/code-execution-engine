@@ -1,3 +1,5 @@
+"use strict";
+
 import executer from "./executor";
 import l from "./languages";
 import lxc from "./lxc";
