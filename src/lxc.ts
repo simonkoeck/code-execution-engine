@@ -65,6 +65,14 @@ class LXC {
     });
   }
 
+  /**
+   *
+   * @param input The code that should be executed
+   * @param language Language of the input parameter
+   * @param args Array of command line arguments
+   * @param stdin stdin of the executed code
+   * @returns Stdout of the code or an exception if stderr is not empty
+   */
   execute(
     input: string,
     language: Language,
