@@ -4,6 +4,7 @@ dir="$( cd "$( dirname "$0" )" && pwd )"
 
 id=$1
 
+
 touch $dir/lockfile
 
 # process incrementor
@@ -27,7 +28,7 @@ lxc-attach --clear-env -n cee -- \
 # runner
 timeout -s KILL 20 \
     lxc-attach --clear-env -n cee -- \
-        /bin/bash -l -c "runuser runner$runner /tmp/$id/runner.sh /tmp/$id/code.code"
+        /bin/bash -l -c "runuser runner$runner /tmp/$id/runner.sh /tmp/$id"
 
 
 lxc-attach --clear-env -n cee -- \

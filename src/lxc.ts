@@ -65,12 +65,19 @@ class LXC {
     });
   }
 
-  execute(input: string, language: Language) {
+  execute(
+    input: string,
+    language: Language,
+    args: string[] = [],
+    stdin: string = ""
+  ) {
     const id = new Date().getTime() + "_" + Math.floor(Math.random() * 10000);
 
     try {
       mkdirSync(`${this.LXC_ROOT_FS}/tmp/${id}`);
       writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/code.code`, input);
+      writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/args.args`, args.join("\n"));
+      writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/stdin.stdin`, stdin);
 
       // Copy .sh file to correct location
       const shFile = readFileSync(
