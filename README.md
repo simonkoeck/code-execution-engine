@@ -61,16 +61,16 @@ _language_: cee.Language – Pass the language the code is written in, for examp
 
 ## Supported Languages
 
-| Windows      | Linux        |
-| ------------ | ------------ |
-| `Python3`    | `Python3`    |
+|   Windows    |    Linux     |
+| :----------: | :----------: |
+|  `Python3`   |  `Python3`   |
 | `Javascript` | `Javascript` |
-| `Ruby`       | `Ruby`       |
-| `Go`         | `Go`         |
-| `Batch`      | `Bash`       |
-|              | `C`          |
-|              | `C++`        |
-|              | `Java`       |
+|    `Ruby`    |    `Ruby`    |
+|     `Go`     |     `Go`     |
+|   `Batch`    |    `Bash`    |
+|              |     `C`      |
+|              |    `C++`     |
+|              |    `Java`    |
 
 More supported languages coming soon.
 
