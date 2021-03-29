@@ -40,7 +40,7 @@ $ npm install code-execution-engine
 const cee = require("code-execution-engine");
 
 cee
-  .execute("print('Hello World')", cee.languages.PYTHON3)
+  .execute("print('Hello World')", cee.languages.PYTHON3, [], "")
   .then((result) => {
     console.log(result);
   })
@@ -49,13 +49,17 @@ cee
   });
 ```
 
-### execute(_input_, _language_) → Promise&lt;String&gt;
+### execute(_input_, _language_, _args_, _stdin_) → Promise&lt;String&gt;
 
 Returns the result (stdout) of the executed code. If stderr is not empty, an exception will be thrown with the content of stderr.
 
-_input_: string – The code you want to execute.
+_input_: string – The source code that should be executed.
 
 _language_: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
+
+_args_: string[] - Command-Line arguments that are passed to the script
+
+_stdin_: string - Set the stdin for the script
 
 <a name="supported-languages"/>
 
