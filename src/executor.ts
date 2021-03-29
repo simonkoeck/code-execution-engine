@@ -37,22 +37,17 @@ export default async function execute(
 
   const tempFolder: string = path.join(tmpdir(), id);
 
-
   try {
     mkdirSync(tempFolder);
     writeFileSync(`${tempFolder}/code.code`, input);
-    writeFileSync(`${tempFolder}/args.args`, env == Environment.WIN ? args.join(" "): args.join("\n"));
+    writeFileSync(
+      `${tempFolder}/args.args`,
+      env == Environment.WIN ? args.join(" ") : args.join("\n")
+    );
     writeFileSync(`${tempFolder}/stdin.stdin`, stdin);
   } catch (e) {
     throw e;
   }
-
-  // Write File to temp folder
-  // if (language == Language.C) temppath += ".c";
-  // else if (language == Language.BATCH) temppath += ".bat";
-  // else if (language == Language.CPP) temppath += ".c";
-  // else if (language == Language.GO) temppath += ".go";
-  // writeFileSync(temppath, input, { encoding: "utf-8" });
 
   var command = env === Environment.WIN ? "" : "sh";
   var filetype = env === Environment.WIN ? "bat" : "sh";
@@ -69,7 +64,10 @@ export default async function execute(
   // Execute code
   return new Promise<string>((resolve, reject) => {
     // if username has a space in it
-    var runcmd = env == Environment.WIN ? `${command} "${runnerpath}" ${tempFolder}` : `${command} ${runnerpath} ${tempFolder}`;
+    var runcmd =
+      env == Environment.WIN
+        ? `${command} "${runnerpath}" ${tempFolder}`
+        : `${command} ${runnerpath} ${tempFolder}`;
     // run command
     exec(runcmd, (err, stdout, stderr) => {
       // Delete created folder
