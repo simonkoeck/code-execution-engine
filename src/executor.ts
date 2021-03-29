@@ -1,7 +1,7 @@
 "use strict";
 
 import { platform, tmpdir } from "os";
-import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
+import { writeFileSync, unlinkSync } from "fs";
 import { exec } from "child_process";
 import { Language, Environment } from "./constants";
 import path from "path";
