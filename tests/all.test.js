@@ -76,10 +76,4 @@ describe("Testing Basic Languages", () => {
         expect(response).toBe("123");
       });
   });
-  // test("LXC", () => {
-  //   var executor = new cee.LXC("cee");
-  //   return executor.execute("whoami", cee.languages.BASH).then((response) => {
-  //     expect(response).toBe("123");
-  //   });
-  // });
 });

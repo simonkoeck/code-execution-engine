@@ -3,10 +3,18 @@
 import { platform, tmpdir } from "os";
 import { writeFileSync, unlinkSync, mkdirSync, readFileSync } from "fs";
 import { exec } from "child_process";
-import Language from "./languages";
+import { Language, Environment } from "./constants";
 import path from "path";
 
 const uniqueFilename = require("unique-filename");
+
+function parseEnvironment(platform: string): Environment {
+  if (platform === "win32") {
+    return Environment.WIN;
+  } else {
+    return Environment.UNIX;
+  }
+}
 
 /**
  *
@@ -19,10 +27,7 @@ export default async function execute(
   language: Language
 ): Promise<string> {
   // Check Platform
-  const os = platform();
-  if (os !== "win32" && os !== "linux") {
-    throw Error("Your OS is not supported yet.");
-  }
+  const env = parseEnvironment(platform());
 
   // Write File to temp folder
   var temppath: string = uniqueFilename(tmpdir());
@@ -33,17 +38,17 @@ export default async function execute(
   writeFileSync(temppath, input, { encoding: "utf-8" });
 
   // Command to execute runner
-  var command = os == "win32" ? "" : "sh";
+  var command = env === Environment.WIN ? "" : "sh";
 
   // Filetype of runner
-  var filetype = os == "win32" ? "bat" : "sh";
+  var filetype = env === Environment.WIN ? "bat" : "sh";
 
   // Path to runner file
   var runnerpath = path.join(
     __dirname,
     "..",
     "runners",
-    os,
+    env,
     `${language}.${filetype}`
   );
 

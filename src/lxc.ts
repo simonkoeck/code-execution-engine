@@ -3,10 +3,9 @@
 import { exec } from "child_process";
 import { mkdirSync, writeFileSync, readFileSync, chmodSync } from "fs";
 import { platform } from "os";
-import Language from "./languages";
+import { Language } from "./constants";
 
 class LXC {
-  private _OS: string;
   LXC_ROOT_FS: string;
 
   constructor(container: string) {
@@ -19,7 +18,6 @@ class LXC {
       };
     }
 
-    this._OS = os;
     this.LXC_ROOT_FS = `${process.env.HOME}/.local/share/lxc/${container}/rootfs`;
     // Check if Container exists
     exec(
@@ -76,7 +74,7 @@ class LXC {
 
       // Copy .sh file to correct location
       const shFile = readFileSync(
-        `${__dirname}/../runners/${this._OS}/${language}.sh`,
+        `${__dirname}/../runners/unix/${language}.sh`,
         "utf-8"
       );
       writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/runner.sh`, shFile);

@@ -1,9 +1,9 @@
 "use strict";
 
 import executer from "./executor";
-import l from "./languages";
+import { Language } from "./constants";
 import lxc from "./lxc";
 
-export const languages = l;
+export const languages = Language;
 export const execute = executer;
 export const LXC = lxc;

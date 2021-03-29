@@ -1,6 +1,6 @@
 "use strict";
 
-enum Language {
+export enum Language {
   PYTHON3 = "python3",
   C = "gcc",
   BASH = "bash",
@@ -12,4 +12,7 @@ enum Language {
   GO = "go",
 }
 
-export default Language;
+export enum Environment {
+  UNIX = "unix",
+  WIN = "win32",
+}
