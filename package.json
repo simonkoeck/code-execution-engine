@@ -11,7 +11,8 @@
   "keywords": [
     "Code",
     "Execution",
-    "Engine"
+    "Engine",
+    "Runner"
   ],
   "author": "Simon Köck",
   "license": "MIT",
