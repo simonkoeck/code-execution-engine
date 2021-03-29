@@ -1,3 +1,4 @@
 @echo off
-cd %1
-python2 code.code
+cd %1 >nul 2>&1
+set /p args=<args.args
+python2 code.code %args% < stdin.stdin
