@@ -64,6 +64,7 @@ _language_: cee.Language – Pass the language the code is written in, for examp
 |     Unix     |   Windows    |
 | :----------: | :----------: |
 |  `Python3`   |  `Python3`   |
+|  `Python2`   |  `Python2`   |
 | `Javascript` | `Javascript` |
 |    `Ruby`    |    `Ruby`    |
 |     `Go`     |     `Go`     |

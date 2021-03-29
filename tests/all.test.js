@@ -8,6 +8,13 @@ describe("Testing Basic Languages", () => {
         expect(response).toBe("123");
       });
   });
+  test("Python2", () => {
+    return cee
+      .execute("print '123'", cee.languages.PYTHON2)
+      .then((response) => {
+        expect(response).toBe("123");
+      });
+  });
   test("Bash", () => {
     return cee.execute("echo 123", cee.languages.BASH).then((response) => {
       expect(response).toBe("123");

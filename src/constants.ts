@@ -2,6 +2,7 @@
 
 export enum Language {
   PYTHON3 = "python3",
+  PYTHON2 = "python2",
   C = "gcc",
   BASH = "bash",
   BATCH = "bat",
