@@ -17,3 +17,7 @@ export enum Environment {
   UNIX = "unix",
   WIN = "win32",
 }
+
+export interface IExecuteOptions {
+  timeout?: number;
+}

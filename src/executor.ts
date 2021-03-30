@@ -1,12 +1,10 @@
 "use strict";
 
 import { platform, tmpdir } from "os";
-import { writeFileSync, unlinkSync, mkdirSync, rmdirSync } from "fs";
+import { writeFileSync, mkdirSync, rmdirSync } from "fs";
 import { exec } from "child_process";
 import { Language, Environment } from "./constants";
 import path from "path";
-
-const uniqueFilename = require("unique-filename");
 
 function parseEnvironment(platform: string): Environment {
   if (platform === "win32") {
@@ -71,7 +69,9 @@ export default async function execute(
     // run command
     exec(runcmd, (err, stdout, stderr) => {
       // Delete created folder
-      rmdirSync(tempFolder, { recursive: true });
+      try {
+        rmdirSync(tempFolder, { recursive: true });
+      } catch (e) {}
 
       if (stderr) {
         // Remove newline from stderr
