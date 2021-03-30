@@ -23,3 +23,15 @@ export interface IExecuteOptions {
 }
 
 export const defaultExecutionTimeout = 5;
+
+export interface ILxcInitOptions {
+  runners?: number;
+  maxProcesses?: number;
+  maxFiles?: number;
+}
+
+export const defaultLxcInitOptions: ILxcInitOptions = {
+  runners: 100,
+  maxProcesses: 64,
+  maxFiles: 2048,
+};

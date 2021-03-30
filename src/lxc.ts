@@ -1,11 +1,13 @@
 "use strict";
 
 import { exec } from "child_process";
-import { mkdirSync, writeFileSync, readFileSync, chmodSync } from "fs";
+import { mkdirSync, writeFileSync, readFileSync } from "fs";
 import { platform } from "os";
 import {
   defaultExecutionTimeout,
+  defaultLxcInitOptions,
   IExecuteOptions,
+  ILxcInitOptions,
   Language,
 } from "./constants";
 
@@ -37,9 +39,12 @@ class LXC {
   }
 
   /**
-   * Run this function the first time, after installing the container
+   * Run this function the first time, after installing the container. Please be patient, this could take a while
+   *
+   * @param options Pass options for the initialization to the function.
+   * @returns
    */
-  init() {
+  init(options: ILxcInitOptions = defaultLxcInitOptions) {
     try {
       // Copy .sh file to correct location
       const shFile = readFileSync(
@@ -55,7 +60,11 @@ class LXC {
 
     return new Promise<string>((resolve, reject) => {
       exec(
-        `lxc-attach --clear-env -n cee -- bash /tmp/lxc-init.bash`,
+        `lxc-attach --clear-env -n cee -- bash /tmp/lxc-init.bash ${
+          options.runners || defaultLxcInitOptions.runners
+        } ${options.maxProcesses || defaultLxcInitOptions.maxProcesses} ${
+          options.maxFiles || defaultLxcInitOptions.maxFiles
+        }`,
         (err, stdout, stderr) => {
           if (err) return reject(err);
           if (stderr) return reject(stderr);
