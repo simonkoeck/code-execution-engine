@@ -3,7 +3,12 @@
 import { platform, tmpdir } from "os";
 import { writeFileSync, mkdirSync, rmdirSync } from "fs";
 import { exec } from "child_process";
-import { Language, Environment } from "./constants";
+import {
+  Language,
+  Environment,
+  IExecuteOptions,
+  defaultExecutionTimeout,
+} from "./constants";
 import path from "path";
 
 function parseEnvironment(platform: string): Environment {
@@ -26,7 +31,8 @@ export default async function execute(
   input: string,
   language: Language,
   args: string[] = [],
-  stdin: string = ""
+  stdin: string = "",
+  options: IExecuteOptions = { timeout: defaultExecutionTimeout }
 ): Promise<string> {
   // Check Platform
   const env = parseEnvironment(platform());
@@ -43,6 +49,10 @@ export default async function execute(
       env == Environment.WIN ? args.join(" ") : args.join("\n")
     );
     writeFileSync(`${tempFolder}/stdin.stdin`, stdin);
+    writeFileSync(
+      `${tempFolder}/timeout.timeout`,
+      (options.timeout || defaultExecutionTimeout).toString()
+    );
   } catch (e) {
     throw e;
   }

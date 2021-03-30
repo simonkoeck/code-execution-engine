@@ -1,3 +1,4 @@
 #!/bin/sh
 cd $1
-timeout -s SIGKILL 10 xargs -a args.args -d '\n' ruby code.code < stdin.stdin
+timeoutInSec=`cat timeout.timeout`
+timeout -s SIGKILL $timeoutInSec xargs -a args.args -d '\n' ruby code.code < stdin.stdin

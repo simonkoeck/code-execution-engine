@@ -21,3 +21,5 @@ export enum Environment {
 export interface IExecuteOptions {
   timeout?: number;
 }
+
+export const defaultExecutionTimeout = 5;
