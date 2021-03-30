@@ -46,7 +46,9 @@ $ yarn add code-execution-engine
 const cee = require("code-execution-engine");
 
 cee
-  .execute("print('Hello World')", cee.languages.PYTHON3, [], "")
+  .execute("print('Hello World')", cee.languages.PYTHON3, [], "", {
+    timeout: 5,
+  })
   .then((result) => {
     console.log(result);
   })
@@ -59,13 +61,17 @@ cee
 
 Returns the result (stdout) of the executed code. If stderr is not empty, an exception will be thrown with the content of stderr.
 
-_input_: string – The source code that should be executed.
+**_input_**: string – The source code that should be executed.
 
-_language_: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
+**_language_**: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
 
-_args_: string[] - Command-Line arguments that are passed to the script
+**_args_**: string[] - Command-Line arguments that are passed to the script
 
-_stdin_: string - Set the stdin for the script
+**_stdin_**: string - Set the stdin for the script
+
+**_options_**: IExecuteOptions
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_timeout_: number - Max execution time of the script. This option doesn't work on windows. Defaults to `5`
 
 <a name="supported-languages"/>
 
