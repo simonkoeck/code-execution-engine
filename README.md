@@ -32,6 +32,12 @@ Use the package manager [npm](https://www.npmjs.com) to install Code-Execution-E
 $ npm install code-execution-engine
 ```
 
+Or use the [yarn](https://yarnpkg.com) package manager.
+
+```bash
+$ yarn add code-execution-engine
+```
+
 <a name="usage"/>
 
 ## Usage
