@@ -57,7 +57,7 @@ cee
   });
 ```
 
-### execute(_input_, _language_, _args_, _stdin_) → Promise&lt;String&gt;
+### execute(_input_, _language_, [_args_], [_stdin_], [_options_]) → Promise&lt;String&gt;
 
 Returns the result (stdout) of the executed code. If stderr is not empty, an exception will be thrown with the content of stderr.
 
@@ -76,6 +76,8 @@ Returns the result (stdout) of the executed code. If stderr is not empty, an exc
 <a name="supported-languages"/>
 
 ## Supported Languages
+
+Get the supported languages on your platform with `cee.getSupportedLanguages();`
 
 |              | Linux / MacOS | Windows |
 | :----------: | :-----------: | :-----: |
