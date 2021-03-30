@@ -8,16 +8,9 @@ import {
   Environment,
   IExecuteOptions,
   defaultExecutionTimeout,
-} from "./constants";
-import path from "path";
-
-function parseEnvironment(platform: string): Environment {
-  if (platform === "win32") {
-    return Environment.WIN;
-  } else {
-    return Environment.UNIX;
-  }
-}
+} from "../constants";
+import { join } from "path";
+import { parseEnvironment } from "./environment";
 
 /**
  *
@@ -39,7 +32,7 @@ export default async function execute(
 
   const id = new Date().getTime() + "_" + Math.floor(Math.random() * 10000);
 
-  const tempFolder: string = path.join(tmpdir(), id);
+  const tempFolder: string = join(tmpdir(), id);
 
   try {
     mkdirSync(tempFolder);
@@ -61,8 +54,9 @@ export default async function execute(
   var filetype = env === Environment.WIN ? "bat" : "sh";
 
   // Path to runner file
-  var runnerpath = path.join(
+  var runnerpath = join(
     __dirname,
+    "..",
     "..",
     "runners",
     env,

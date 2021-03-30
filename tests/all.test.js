@@ -100,3 +100,10 @@ int main() {
       });
   }, 30000);
 });
+
+describe("Testing Basic Functions", () => {
+  test("getSupportedLanguages()", () => {
+    var l = cee.getSupportedLanguages();
+    expect(l.length).toBeGreaterThan(0);
+  }, 30000);
+});
