@@ -77,7 +77,11 @@ Returns the result (stdout) of the executed code. If stderr is not empty, an exc
 
 ## Supported Languages
 
-Get the supported languages on your platform with `cee.getSupportedLanguages();`
+Get the supported languages on your platform by callling
+
+```js
+cee.getSupportedLanguages();
+```
 
 |              | Linux / MacOS | Windows |
 | :----------: | :-----------: | :-----: |
@@ -105,8 +109,13 @@ const cee = require("code-execution-engine");
 
 const executor = new cee.LXC("[NAME OF YOUR LXC-CONTAINER]");
 
-// Run this line after the installation of the container
-executor.init();
+// Run this function after the installation of the container
+executor.init({
+  runners: 150,
+  // limitations per runner
+  maxProcesses: 64,
+  maxFiles: 2048,
+});
 
 executor
   .execute("echo 'Im in a secure environment!'", cee.languages.BASH)
