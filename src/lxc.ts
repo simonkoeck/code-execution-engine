@@ -3,7 +3,11 @@
 import { exec } from "child_process";
 import { mkdirSync, writeFileSync, readFileSync, chmodSync } from "fs";
 import { platform } from "os";
-import { Language } from "./constants";
+import {
+  defaultExecutionTimeout,
+  IExecuteOptions,
+  Language,
+} from "./constants";
 
 class LXC {
   LXC_ROOT_FS: string;
@@ -77,7 +81,8 @@ class LXC {
     input: string,
     language: Language,
     args: string[] = [],
-    stdin: string = ""
+    stdin: string = "",
+    options: IExecuteOptions = { timeout: defaultExecutionTimeout }
   ) {
     const id = new Date().getTime() + "_" + Math.floor(Math.random() * 10000);
 
@@ -86,6 +91,10 @@ class LXC {
       writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/code.code`, input);
       writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/args.args`, args.join("\n"));
       writeFileSync(`${this.LXC_ROOT_FS}/tmp/${id}/stdin.stdin`, stdin);
+      writeFileSync(
+        `${this.LXC_ROOT_FS}/tmp/${id}/timeout.timeout`,
+        (options.timeout || defaultExecutionTimeout).toString()
+      );
 
       // Copy .sh file to correct location
       const shFile = readFileSync(
