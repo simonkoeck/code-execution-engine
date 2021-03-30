@@ -77,7 +77,7 @@ Returns the result (stdout) of the executed code. If stderr is not empty, an exc
 
 ## Supported Languages
 
-Get the supported languages on your platform by callling
+Get the supported languages on your platform by calling
 
 ```js
 cee.getSupportedLanguages();
