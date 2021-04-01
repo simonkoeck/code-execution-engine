@@ -8,19 +8,21 @@ A fast and secure Code-Execution-Engine in Javascript.
 
 ## Table of Contents
 
-[Installation](#installation)
+- [Installation](#installation)
 
-[Usage](#usage)
+- [Usage](#usage)
 
-[Supported Languages](#supported-languages)
+- [Supported Languages](#supported-languages)
 
-[Security](#security)
+- [Security](#security)
 
-[LXC](#lxc)
+- [LXC](#lxc)
 
-[Contributing](#contributing)
+- [Contributing](#contributing)
 
-[License](#license)
+- [Credits](#contributing)
+
+- [License](#license)
 
 <a name="installation"/>
 
@@ -151,7 +153,7 @@ Please make sure to update tests as appropriate.
 
 ## Credits
 
-Inspired by: [Piston](https://github.com/engineer-man/piston)
+Inspired by: [engineer-man/piston](https://github.com/engineer-man/piston)
 
 <a name="license"/>
 
