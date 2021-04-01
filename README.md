@@ -20,7 +20,7 @@ A fast and secure Code-Execution-Engine in Javascript.
 
 - [Contributing](#contributing)
 
-- [Credits](#contributing)
+- [Credits](#credits)
 
 - [License](#license)
 
