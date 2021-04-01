@@ -63,7 +63,7 @@ Returns the result (stdout) of the executed code. If stderr is not empty, an exc
 
 **_input_**: string – The source code that should be executed.
 
-**_language_**: cee.Language – Pass the language the code is written in, for example `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
+**_language_**: cee.Language – Pass the language the code is written in, for example, `cee.languages.PYTHON3`. [Supported Lanuages](#supported-languages)
 
 **_args_**: string[] - Command-Line arguments that are passed to the script
 
@@ -127,13 +127,13 @@ executor
   });
 ```
 
-To use LXC, follow the instructions below to setup LXC.
+To use LXC, follow the instructions below to set up LXC.
 
 <a name="lxc"/>
 
 ## LXC
 
-LXC are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC are only available on Linux-Systems.
+LXC's are Linux containers, that run the code in a different and secure environment. To use them, you need to install them first. LXC's are only available on Linux-Systems.
 
 To use this package with LXC, you need to install an unprivileged container.
 
