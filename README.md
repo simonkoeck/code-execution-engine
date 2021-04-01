@@ -147,6 +147,12 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+<a name="credits"/>
+
+## Credits
+
+Inspired by: [Piston](https://github.com/engineer-man/piston)
+
 <a name="license"/>
 
 ## License
