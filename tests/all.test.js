@@ -80,25 +80,6 @@ int main() {
         expect(response).toBe("123");
       });
   }, 30000);
-  test("Go", () => {
-    return cee
-      .execute(
-        `
-            package main
-
-            import "fmt"
-
-            func main() {
-                fmt.Println("123")
-            }
-
-          `,
-        cee.languages.GO
-      )
-      .then((response) => {
-        expect(response).toBe("123");
-      });
-  }, 30000);
 });
 
 describe("Testing Basic Functions", () => {
