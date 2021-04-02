@@ -13,8 +13,10 @@ import {
 
 class LXC {
   LXC_ROOT_FS: string;
+  CONTAINER: string;
 
   constructor(container: string) {
+    this.CONTAINER = container;
     // Check OS
     const os = platform();
     if (os !== "linux") {
@@ -119,7 +121,7 @@ class LXC {
 
     return new Promise<string>((resolve, reject) => {
       exec(
-        `bash ${__dirname}/../runners/lxc/lxc-execute.bash ${id}`,
+        `bash ${__dirname}/../runners/lxc/lxc-execute.bash ${id} ${this.CONTAINER}`,
         (err, stdout, stderr) => {
           if (err) return reject(err);
           if (stderr) return reject(stderr);

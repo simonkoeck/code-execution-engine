@@ -3,6 +3,7 @@
 dir="$( cd "$( dirname "$0" )" && pwd )"
 
 id=$1
+containername=$2
 
 
 touch $dir/lockfile
@@ -19,7 +20,7 @@ echo $runner > $dir/i
 exec 200>&-
 
 # prevent users from spying on each other
-lxc-attach --clear-env -n cee -- \
+lxc-attach --clear-env -n $containername -- \
     /bin/bash -c "
         chown runner$runner: -R /tmp/$id
         chmod 700 /tmp/$id
@@ -27,11 +28,11 @@ lxc-attach --clear-env -n cee -- \
 
 # runner
 timeout -s KILL 20 \
-    lxc-attach --clear-env -n cee -- \
+    lxc-attach --clear-env -n $containername -- \
         /bin/bash -l -c "runuser runner$runner /tmp/$id/runner.sh /tmp/$id"
 
 
-lxc-attach --clear-env -n cee -- \
+lxc-attach --clear-env -n $containername -- \
     /bin/bash -c "
         while pgrep -u runner$runner > /dev/null
         do
