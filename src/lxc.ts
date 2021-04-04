@@ -62,7 +62,9 @@ class LXC {
 
     return new Promise<string>((resolve, reject) => {
       exec(
-        `lxc-attach --clear-env -n cee -- bash /tmp/lxc-init.bash ${
+        `lxc-attach --clear-env -n ${
+          this.CONTAINER
+        } -- bash /tmp/lxc-init.bash ${
           options.runners || defaultLxcInitOptions.runners
         } ${options.maxProcesses || defaultLxcInitOptions.maxProcesses} ${
           options.maxFiles || defaultLxcInitOptions.maxFiles
